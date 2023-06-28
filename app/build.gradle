@@ -31,4 +31,14 @@ application {
 task stage(dependsOn: ['clean', 'installDist'])
 installDist.mustRunAfter clean
 
+jar {
+    manifest {
+        attributes "Main-Class": "exercise.App"
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 
