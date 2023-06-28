@@ -2,7 +2,13 @@ package hexlet.code;
 
 import hexlet.code.controller.HelloWorld;
 import io.javalin.Javalin;
+import io.javalin.rendering.template.JavalinThymeleaf;
 import io.javalin.config.JavalinConfig;
+import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
+import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
+import io.javalin.rendering.template.JavalinThymeleaf;
 
 public class App {
     public static void main(String[] args) {
@@ -10,7 +16,12 @@ public class App {
     }
 
     public static Javalin getApp() {
-        Javalin app = Javalin.create(c -> c.plugins.enableDevLogging());
+        Javalin app = Javalin.create(c -> {
+            if (!isProduction()) {
+                c.plugins.enableDevLogging();
+            }
+            JavalinThymeleaf.init(getTemplateEngine());
+        });
         addRoutes(app);
         app.before(ctx -> {
             ctx.attribute("ctx", ctx);
@@ -64,4 +75,19 @@ public class App {
 
         // В обработчике можно будет получить переменную часть пути при помощи метода ctx.pathParam("id")
     }
+
+    private static TemplateEngine getTemplateEngine() {
+        TemplateEngine templateEngine = new TemplateEngine();
+
+        ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
+        templateResolver.setPrefix("/templates/");
+        templateResolver.setCharacterEncoding("UTF-8");
+
+        templateEngine.addTemplateResolver(templateResolver);
+        templateEngine.addDialect(new LayoutDialect());
+        templateEngine.addDialect(new Java8TimeDialect());
+
+        return templateEngine;
+    }
+
 }
