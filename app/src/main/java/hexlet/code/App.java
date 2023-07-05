@@ -1,31 +1,40 @@
 package hexlet.code;
 
 import hexlet.code.controller.HelloWorld;
+import hexlet.code.controller.UrlController;
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinThymeleaf;
-import io.javalin.config.JavalinConfig;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
-import io.javalin.rendering.template.JavalinThymeleaf;
+
+import static io.javalin.apibuilder.ApiBuilder.path;
+import static io.javalin.apibuilder.ApiBuilder.get;
+import static io.javalin.apibuilder.ApiBuilder.post;
 
 public class App {
     public static void main(String[] args) {
+        System.out.println(System.getenv().get("APP_ENV"));
         getApp().start(getPort());
+
     }
 
     public static Javalin getApp() {
-        Javalin app = Javalin.create(c -> {
+        Javalin app = Javalin.create(config -> {
             if (!isProduction()) {
-                c.plugins.enableDevLogging();
+                config.plugins.enableDevLogging();
             }
+            config.staticFiles.enableWebjars();
             JavalinThymeleaf.init(getTemplateEngine());
         });
+
         addRoutes(app);
+
         app.before(ctx -> {
             ctx.attribute("ctx", ctx);
         });
+
         return app;
     }
 
@@ -46,6 +55,16 @@ public class App {
         // Добавляем маршруты в приложение. мя метода соответствует глаголу HTTP
         // Метод get добавляет обработчик, который будет выполняться для GET запроса по указанному пути
         app.get("/", HelloWorld.helloWorld);
+        app.routes(() -> {
+            path("urls", () -> {
+                get(UrlController.listUrls);
+                post(UrlController.urls);
+                path("{id}", () -> {
+                    get(UrlController.showUrl);
+                    post("/checks", UrlController.checkUrl);
+                });
+            });
+        });
 //
 //        app.get("companies", CompanyController.listCompanies);
 
