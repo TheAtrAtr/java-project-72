@@ -1,14 +1,14 @@
 package hexlet.code;
 
-import hexlet.code.domain.Url;
-import hexlet.code.domain.query.QUrl;
+//import hexlet.code.domain.Url;
+//import hexlet.code.domain.query.QUrl;
 import io.ebean.DB;
 import io.ebean.Transaction;
 import io.javalin.Javalin;
 import kong.unirest.Empty;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-import okhttp3.mockwebserver.MockResponse;
+//import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,8 +17,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+//import java.nio.file.Files;
+//import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
