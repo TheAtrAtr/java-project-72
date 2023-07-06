@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="10.0">
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\App.java">
+</file>
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\MigrationGenerator.java">
+</file>
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\controller\HelloWorld.java">
+</file>
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\controller\UrlController.java">
+</file>
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\domain\Url.java">
+</file>
+<file name="H:\hexlet\java-project-72\app\src\main\java\hexlet\code\domain\UrlCheck.java">
+</file>
+</checkstyle>

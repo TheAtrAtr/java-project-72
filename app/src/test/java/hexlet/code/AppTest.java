@@ -1,14 +1,14 @@
 package hexlet.code;
 
-//import hexlet.code.domain.Url;
-//import hexlet.code.domain.query.QUrl;
+import hexlet.code.domain.Url;
+import hexlet.code.domain.query.QUrl;
 import io.ebean.DB;
 import io.ebean.Transaction;
 import io.javalin.Javalin;
 import kong.unirest.Empty;
 import kong.unirest.HttpResponse;
 import kong.unirest.Unirest;
-//import okhttp3.mockwebserver.MockResponse;
+import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,16 +17,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.AfterEach;
 
 import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AppTest {
-    @Test
-    void testInit() {
-        assertThat(true).isEqualTo(true);
-    }
 
     private static Javalin app;
     private static String baseUrl;
@@ -92,31 +88,29 @@ public class AppTest {
         assertThat(responseWithIncorrectUrl.getBody()).contains("Ссылка введена в некорректном формате");
     }
 
-//    @Test
-//    void testCorrUrlAdd() {
-//        String url = "www.example.com";
-//        HttpResponse<Empty> response = Unirest
-//                .post(baseUrl + "/urls")
-//                .field("url", url)
-//                .asEmpty();
-//
-//        assertThat(response.getStatus()).isEqualTo(302);
-//        System.out.println(url);
-//        System.out.println(response.getHeaders().getFirst("Location"));
-    //  assertThat(response.getHeaders().getFirst("Location")).isEqualTo("/urls");
+    @Test
+    void testCorrUrlAdd() {
+        String url = "https://www.example.com";
+        HttpResponse<Empty> response = Unirest
+                .post(baseUrl + "/urls")
+                .field("url", url)
+                .asEmpty();
 
-//        Url addedUrl = new QUrl()
-//                .name.equalTo(url)
-//                .findOne();
-//
-//        assertThat(addedUrl).isNotNull();
-//        assertThat(addedUrl.getName()).isEqualTo(url);
-//
-//        HttpResponse<String> newResponse = Unirest.get(baseUrl + "/urls").asString();
-//        assertThat(newResponse.getStatus()).isEqualTo(200);
-//        assertThat(newResponse.getBody()).contains(url);
-//        assertThat(newResponse.getBody()).contains("Страница успешно добавлена");
-//    }
+        assertThat(response.getStatus()).isEqualTo(302);
+        assertThat(response.getHeaders().getFirst("Location")).isEqualTo("/urls");
+
+        Url addedUrl = new QUrl()
+                .name.equalTo(url)
+                .findOne();
+
+        assertThat(addedUrl).isNotNull();
+        assertThat(addedUrl.getName()).isEqualTo(url);
+
+        HttpResponse<String> newResponse = Unirest.get(baseUrl + "/urls").asString();
+        assertThat(newResponse.getStatus()).isEqualTo(200);
+        assertThat(newResponse.getBody()).contains(url);
+        assertThat(newResponse.getBody()).contains("Ссылка добавлена в базу");
+    }
 
     @Test
     void testExistingUrlAddition() {
@@ -145,28 +139,33 @@ public class AppTest {
         assertThat(response.getBody()).contains("Запустить проверку");
     }
 
-//    @Test
-//    void testCheckUrl() throws Exception {
-//        server = new MockWebServer();
-//        String expectedBody = Files.readString(Path.of("src/test/resources/test.html"));
-//        server.enqueue(new MockResponse().setBody(expectedBody));
-//        server.start();
-//        String serverUrl = server.url("/").toString();
-//        Url url = new QUrl()
-//                .name.equalTo(serverUrl.substring(0, serverUrl.length() - 1))
-//                .findOne();
-//        HttpResponse<String> responsePost = Unirest
-//                .post(baseUrl + "/urls/" + url.getId() + "/checks")
-//                .asString();
-//        assertThat(responsePost.getStatus()).isEqualTo(302);
-//        assertThat(responsePost.getHeaders().getFirst("Location")).isEqualTo("/urls/" + url.getId());
-//        String body = Unirest
-//                .get(baseUrl + "/urls/" + url.getId())
-//                .asString()
-//                .getBody();
-//        assertThat(body).contains("200");
-//        assertThat(body).contains("Хекслет");
-//        assertThat(body).contains("Живое онлайн сообщество");
-//        assertThat(body).contains("Это заголовок h1");
-//    }
+    @Test
+    void testCheckUrl() throws Exception {
+        server = new MockWebServer();
+        String expectedBody = Files.readString(Path.of("src/test/resources/test.html"));
+        server.enqueue(new MockResponse().setBody(expectedBody));
+        server.start();
+        String serverUrl = server.url("/").toString();
+        HttpResponse<Empty> response = Unirest
+                .post(baseUrl + "/urls")
+                .field("url", serverUrl)
+                .asEmpty();
+        Url url = new QUrl()
+                .name.equalTo(serverUrl.substring(0, serverUrl.length() - 1))
+                .findOne();
+        System.out.println(url);
+        HttpResponse<String> responsePost = Unirest
+                .post(baseUrl + "/urls/" + url.getId() + "/checks")
+                .asString();
+        assertThat(responsePost.getStatus()).isEqualTo(302);
+        assertThat(responsePost.getHeaders().getFirst("Location")).isEqualTo("/urls/" + url.getId());
+        String body = Unirest
+                .get(baseUrl + "/urls/" + url.getId())
+                .asString()
+                .getBody();
+        assertThat(body).contains("200");
+        assertThat(body).contains("Хекслет");
+        assertThat(body).contains("Живое онлайн сообщество");
+        assertThat(body).contains("Это заголовок h1");
+    }
 }

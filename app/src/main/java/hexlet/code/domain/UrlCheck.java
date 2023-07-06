@@ -4,6 +4,7 @@ import io.ebean.Model;
 import io.ebean.annotation.WhenCreated;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import java.time.Instant;
@@ -11,6 +12,7 @@ import java.time.Instant;
 @Entity
 public final class UrlCheck extends Model {
     @Id
+    @GeneratedValue
     private long id;
     private int statusCode;
     private String title;

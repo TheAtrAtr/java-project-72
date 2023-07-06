@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - AppTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>AppTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/hexlet.code.html">hexlet.code</a> &gt; AppTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">5.601s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testCheckUrl()</td>
+<td class="success">5.219s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testCorrUrlAdd()</td>
+<td class="success">0.050s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testExistingUrlAddition()</td>
+<td class="success">0.050s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIncorrectUrlAdd()</td>
+<td class="success">0.046s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testRoot()</td>
+<td class="success">0.050s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testShowUrl()</td>
+<td class="success">0.041s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUrl()</td>
+<td class="success">0.060s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testUrls()</td>
+<td class="success">0.085s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Url@0(id:3, name:http://na1r.services.adobe.com:50373, createdAt:2023-07-06T12:33:36.548Z)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/]
+[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/urls]
+[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: POST[/urls]
+[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: GET[/urls/{id}]
+[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: POST[/urls/{id}/checks]
+[Test worker] INFO io.javalin.Javalin - JAVALIN HANDLER REGISTRATION DEBUG LOG: BEFORE[*]
+[Test worker] INFO io.javalin.Javalin - Starting Javalin ...
+[Test worker] INFO org.eclipse.jetty.server.Server - jetty-11.0.15; built: 2023-04-11T18:37:53.775Z; git: 5bc5e562c8d05c5862505aebe5cf83a61bdbcb96; jvm 17.0.4.1+9-LTS
+[Test worker] INFO org.eclipse.jetty.server.session.DefaultSessionIdManager - Session workerName=node0
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Started i.j.j.@99223ac{/,null,AVAILABLE}
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@6a278584{HTTP/1.1, (http/1.1)}{0.0.0.0:50369}
+[Test worker] INFO org.eclipse.jetty.server.Server - Started Server@30a01dd8{STARTING}[11.0.15,sto=0] @3948ms
+[Test worker] INFO io.javalin.Javalin - 
+       __                  ___          ______
+      / /___ __   ______ _/ (_)___     / ____/
+ __  / / __ `/ | / / __ `/ / / __ \   /___ \
+/ /_/ / /_/ /| |/ / /_/ / / / / / /  ____/ /
+\____/\__,_/ |___/\__,_/_/_/_/ /_/  /_____/
+
+       https://javalin.io/documentation
+
+[Test worker] INFO io.javalin.Javalin - Static file handler added: StaticFileConfig(hostedPath=/, directory=META-INF/resources/webjars, location=CLASSPATH, precompress=false, aliasCheck=null, headers={Cache-Control=max-age=31622400}, skipFileFunction=Function1&lt;jakarta.servlet.http.HttpServletRequest, java.lang.Boolean&gt;, mimeTypes=io.javalin.http.staticfiles.MimeTypesConfig@62f37bfd). File system location: 'jar:file:/C:/Users/The%20Atr/.gradle/caches/modules-2/files-2.1/org.webjars/bootstrap/5.2.3/4abbab7b738ab59b25ae6081b9b30bb7779741fd/bootstrap-5.2.3.jar!/META-INF/resources/webjars'
+[Test worker] INFO io.javalin.Javalin - Listening on http://localhost:50369/
+[Test worker] INFO io.javalin.Javalin - You are running Javalin 5.5.0 (released May 1, 2023).
+[Test worker] INFO io.javalin.Javalin - Javalin started in 519ms \o/
+[Test worker] INFO io.ebean - ebean version: 13.15.0
+[Test worker] INFO io.avaje.config - Loaded properties from [resource:application.yaml, resource:application-test.yaml] 
+[ForkJoinPool.commonPool-worker-2] INFO io.ebean.test - Using jdbc settings - username:sa url:jdbc:h2:mem:test driver:org.h2.Driver
+[Test worker] INFO io.ebean.test - For testing purposes a current user provider has been configured. Use io.ebean.test.UserContext to set current user in tests.
+[Test worker] INFO io.ebean.datasource - DataSource [development] autoCommit[false] transIsolation[READ_COMMITTED] min[2] max[200] in[696ms]
+[Test worker] INFO io.ebean.DDL - Executing development-drop-all.sql - 4 statements, autoCommit:true
+[Test worker] INFO io.ebean.DDL - Executing development-create-all.sql - 4 statements, autoCommit:false
+[Test worker] INFO io.ebean.DDL - Executing seed.sql - 1 statements, autoCommit:false
+[Test worker] INFO io.ebean.core - Started database[development] platform[H2] in 1 825ms
+[JettyServerThreadPool-55] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip, Content-Length=51, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {}
+    Body: url=http%3A%2F%2Fna1r.services.adobe.com%3A50373%2F
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[http://na1r.services.adobe.com:50373/]}
+Response: [302 Found], execution took 189.81 ms
+    Headers: {Set-Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0; Path=/; HttpOnly; SameSite=Lax, Expires=Thu, 01 Jan 1970 00:00:00 GMT, Date=Thu, 06 Jul 2023 12:33:36 GMT, Content-Type=text/plain, Location=/urls}
+    Body is 10 bytes (starts on next line):
+    Redirected
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-31] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls/3/checks]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls/{id}/checks]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip, Content-Length=0}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [302 Found], execution took 220.23 ms
+    Headers: {Date=Thu, 06 Jul 2023 12:33:36 GMT, Content-Type=text/plain, Location=/urls/3}
+    Body is 10 bytes (starts on next line):
+    Redirected
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-55] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls/3]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls/{id}]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 1808.99 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:37 GMT, Content-Type=text/html}
+    Body is gzipped (3280 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-57] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls/1]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls/{id}]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 45.18 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:38 GMT, Content-Type=text/html}
+    Body is gzipped (2686 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-55] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/]
+    Matching endpoint-handlers: [BEFORE=*, GET=/]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 40.77 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (3145 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-57] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 75.85 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (3405 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-55] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip, Content-Length=29, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: url=https%3A%2F%2Ftwitter.com
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[https://twitter.com]}
+Response: [302 Found], execution took 2.03 ms
+    Headers: {Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/plain, Location=/urls}
+    Body is 10 bytes (starts on next line):
+    Redirected
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-57] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 32.17 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (3691 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-55] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip, Content-Length=12, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: url=moon.com
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[moon.com]}
+Response: [302 Found], execution took 0.55 ms
+    Headers: {Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/plain, Location=/}
+    Body is 10 bytes (starts on next line):
+    Redirected
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-32] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/]
+    Matching endpoint-handlers: [BEFORE=*, GET=/]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 29.32 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (3444 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-57] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: POST [/urls]
+    Matching endpoint-handlers: [BEFORE=*, POST=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip, Content-Length=33, Content-Type=application/x-www-form-urlencoded; charset=UTF-8}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: url=https%3A%2F%2Fwww.example.com
+    QueryString: null
+    QueryParams: {}
+    FormParams: {url=[https://www.example.com]}
+Response: [302 Found], execution took 2.25 ms
+    Headers: {Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/plain, Location=/urls}
+    Body is 10 bytes (starts on next line):
+    Redirected
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-33] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 32.43 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (3906 bytes, not logged)
+----------------------------------------------------------------------------------
+[JettyServerThreadPool-30] INFO io.javalin.Javalin - JAVALIN REQUEST DEBUG LOG:
+Request: GET [/urls/2]
+    Matching endpoint-handlers: [BEFORE=*, GET=/urls/{id}]
+    Headers: {Cookie=JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0, User-Agent=unirest-java/3.1.00, Connection=keep-alive, Host=localhost:50369, Accept-Encoding=gzip}
+    Cookies: {JSESSIONID=node0hztfxttufjh11xsbwyu9eq89n0.node0}
+    Body: 
+    QueryString: null
+    QueryParams: {}
+    FormParams: {}
+Response: [200 OK], execution took 31.68 ms
+    Headers: {Content-Encoding=gzip, Date=Thu, 06 Jul 2023 12:33:39 GMT, Content-Type=text/html}
+    Body is gzipped (2683 bytes, not logged)
+----------------------------------------------------------------------------------
+[Test worker] INFO io.javalin.Javalin - Stopping Javalin ...
+[Test worker] INFO org.eclipse.jetty.server.Server - Stopped Server@30a01dd8{STOPPING}[11.0.15,sto=0]
+[Test worker] INFO org.eclipse.jetty.server.AbstractConnector - Stopped ServerConnector@6a278584{HTTP/1.1, (http/1.1)}{0.0.0.0:0}
+[Test worker] INFO org.eclipse.jetty.server.handler.ContextHandler - Stopped i.j.j.@99223ac{/,null,STOPPED}
+[Test worker] INFO io.javalin.Javalin - Javalin has stopped
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.4</a> at 6 июл. 2023 г., 15:33:40</p>
+</div>
+</div>
+</body>
+</html>
