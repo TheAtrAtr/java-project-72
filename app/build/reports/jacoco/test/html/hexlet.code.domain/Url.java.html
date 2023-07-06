@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Url.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">hexlet.code.domain</a> &gt; <span class="el_source">Url.java</span></div><h1>Url.java</h1><pre class="source lang-java linenums"><span class="fc" id="L1">package hexlet.code.domain;</span>
+<span class="nc" id="L2"></span>
+<span class="nc" id="L3">import io.ebean.Model;</span>
+<span class="nc" id="L4">import io.ebean.annotation.WhenCreated;</span>
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.time.Instant;
+import java.util.List;
+
+
+@Entity
+public class Url extends Model {
+    @Id
+    @GeneratedValue
+    private long id;
+
+    private String name;
+
+    @WhenCreated
+    private Instant createdAt;
+    @OneToMany
+<span class="nc" id="L25">    private List&lt;UrlCheck&gt; urlChecks;</span>
+
+<span class="fc" id="L27">    public Url() {</span>
+<span class="fc" id="L28">    }</span>
+
+<span class="nc" id="L30">    public Url(String urlFromInputField) {</span>
+<span class="nc" id="L31">        this.name = urlFromInputField;</span>
+<span class="nc" id="L32">    }</span>
+
+    public Instant getCreatedAt() {
+<span class="fc" id="L35">        return this.createdAt;</span>
+    }
+
+    public String getName() {
+<span class="fc" id="L39">        return name;</span>
+    }
+
+    public List&lt;UrlCheck&gt; getUrlChecks() {
+<span class="fc" id="L43">        return this.urlChecks;</span>
+    }
+
+    public long getId() {
+<span class="fc" id="L47">        return id;</span>
+    }
+
+    public Instant getLastCheckDate() {
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (!urlChecks.isEmpty()) {</span>
+<span class="nc" id="L52">            return urlChecks.get(urlChecks.size() - 1).getCreatedAt();</span>
+        }
+<span class="fc" id="L54">        return null;</span>
+    }
+
+    public Integer getLastCheckStatus() {
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (!urlChecks.isEmpty()) {</span>
+<span class="nc" id="L59">            return urlChecks.get(urlChecks.size() - 1).getStatusCode();</span>
+        }
+<span class="fc" id="L61">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -42,9 +42,11 @@ public class App {
         String port = System.getenv().getOrDefault("PORT", "5000");
         return Integer.parseInt(port);
     }
-    private static String getMode(){
+
+    private static String getMode() {
         return System.getenv().getOrDefault("APP_ENV", "development");
     }
+
     private static boolean isProduction() {
         return getMode().equals("production");
     }

@@ -18,44 +18,12 @@ import io.ebean.typequery.TypeQueryBean;
  */
 @Generated("io.ebean.querybean.generator")
 @TypeQueryBean("v1")
-public class QAssocUrl<R> extends TQAssocBean<Url,R> {
+public final class QAssocUrl<R> extends TQAssocBean<Url,R,QUrl> {
 
   public PLong<R> id;
   public PString<R> name;
   public PInstant<R> createdAt;
   public QAssocUrlCheck<R> urlChecks;
-
-  /**
-   * Eagerly fetch this association loading the specified properties.
-   */
-  @SafeVarargs @SuppressWarnings("varargs")
-  public final R fetch(TQProperty<QUrl>... properties) {
-    return fetchProperties(properties);
-  }
-
-  /**
-   * Eagerly fetch this association using a 'query join' loading the specified properties.
-   */
-  @SafeVarargs @SuppressWarnings("varargs")
-  public final R fetchQuery(TQProperty<QUrl>... properties) {
-    return fetchQueryProperties(properties);
-  }
-
-  /**
-   * Eagerly fetch this association using L2 cache.
-   */
-  @SafeVarargs @SuppressWarnings("varargs")
-  public final R fetchCache(TQProperty<QUrl>... properties) {
-    return fetchCacheProperties(properties);
-  }
-
-  /**
-   * Use lazy loading for this association loading the specified properties.
-   */
-  @SafeVarargs @SuppressWarnings("varargs")
-  public final R fetchLazy(TQProperty<QUrl>... properties) {
-    return fetchLazyProperties(properties);
-  }
 
   public QAssocUrl(String name, R root) {
     super(name, root);

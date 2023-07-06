@@ -6,11 +6,11 @@ import java.util.List;
 import io.ebean.typequery.Generated;
 
 import io.ebean.config.ModuleInfo;
-import io.ebean.config.ModuleInfoLoader;
+import io.ebean.config.EntityClassRegister;
 
 @Generated("io.ebean.querybean.generator")
 @ModuleInfo(entities={"hexlet.code.domain.Url","hexlet.code.domain.UrlCheck"})
-public class _Ebean$ModuleInfo implements ModuleInfoLoader {
+public class EbeanEntityRegister implements EntityClassRegister {
 
   /**
    * Register AttributeConverter etc

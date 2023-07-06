@@ -35,8 +35,6 @@ public class UrlController {
         url.save();
         ctx.sessionAttribute("flash", "Ссылка добавлена в базу");
         ctx.redirect("/urls");
-
-
     };
 
     public static Handler listUrls = ctx -> {
@@ -45,9 +43,9 @@ public class UrlController {
         int off = (number - 1) * rows;
 
         PagedList<Url> pagedList = new QUrl().setFirstRow(off).setMaxRows(rows).orderBy().id.asc().findPagedList();
-        List<Url> list_url = pagedList.getList();
+        List<Url> urlList = pagedList.getList();
         int countUrls = new QUrl().findCount();
-        ctx.attribute("urls", list_url);
+        ctx.attribute("urls", urlList);
         ctx.attribute("page", number);
         ctx.attribute("countUrls", countUrls);
         ctx.render("urls/index.html");
