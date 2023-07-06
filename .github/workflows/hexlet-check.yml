@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run chmod to make gradlew executable
-        run: chmod +x ./gradlew
+        run: chmod +x ./app/gradlew
       - name: Hexlet project check
         uses: hexlet/project-action@release
         with:
