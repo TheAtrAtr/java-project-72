@@ -35,7 +35,7 @@ public class UrlController {
         }
         url = new Url(urlFromInputField);
         url.save();
-        ctx.sessionAttribute("flash", "Ссылка добавлена в базу");
+        ctx.sessionAttribute("flash", "Страница успешно добавлена");
         ctx.sessionAttribute("flash-type", "success");
         ctx.redirect("/urls");
     };

@@ -109,7 +109,7 @@ public class AppTest {
         HttpResponse<String> newResponse = Unirest.get(baseUrl + "/urls").asString();
         assertThat(newResponse.getStatus()).isEqualTo(200);
         assertThat(newResponse.getBody()).contains(url);
-        assertThat(newResponse.getBody()).contains("Ссылка добавлена в базу");
+        assertThat(newResponse.getBody()).contains("Страница успешно добавлена");
     }
 
     @Test
