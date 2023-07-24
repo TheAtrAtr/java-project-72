@@ -21,7 +21,7 @@ import io.ebean.typequery.TypeQueryBean;
  */
 @Generated("io.ebean.querybean.generator")
 @TypeQueryBean("v1")
-public final class QUrlCheck extends TQRootBean<UrlCheck,QUrlCheck> {
+public class QUrlCheck extends TQRootBean<UrlCheck,QUrlCheck> {
 
   private static final QUrlCheck _alias = new QUrlCheck(true);
 

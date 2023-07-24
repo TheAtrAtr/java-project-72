@@ -19,7 +19,7 @@ import io.ebean.typequery.TypeQueryBean;
  */
 @Generated("io.ebean.querybean.generator")
 @TypeQueryBean("v1")
-public final class QAssocUrlCheck<R> extends TQAssocBean<UrlCheck,R,QUrlCheck> {
+public class QAssocUrlCheck<R> extends TQAssocBean<UrlCheck,R> {
 
   public PLong<R> id;
   public PInteger<R> statusCode;
@@ -28,6 +28,38 @@ public final class QAssocUrlCheck<R> extends TQAssocBean<UrlCheck,R,QUrlCheck> {
   public PString<R> description;
   public PInstant<R> createdAt;
   public QAssocUrl<R> url;
+
+  /**
+   * Eagerly fetch this association loading the specified properties.
+   */
+  @SafeVarargs @SuppressWarnings("varargs")
+  public final R fetch(TQProperty<QUrlCheck>... properties) {
+    return fetchProperties(properties);
+  }
+
+  /**
+   * Eagerly fetch this association using a 'query join' loading the specified properties.
+   */
+  @SafeVarargs @SuppressWarnings("varargs")
+  public final R fetchQuery(TQProperty<QUrlCheck>... properties) {
+    return fetchQueryProperties(properties);
+  }
+
+  /**
+   * Eagerly fetch this association using L2 cache.
+   */
+  @SafeVarargs @SuppressWarnings("varargs")
+  public final R fetchCache(TQProperty<QUrlCheck>... properties) {
+    return fetchCacheProperties(properties);
+  }
+
+  /**
+   * Use lazy loading for this association loading the specified properties.
+   */
+  @SafeVarargs @SuppressWarnings("varargs")
+  public final R fetchLazy(TQProperty<QUrlCheck>... properties) {
+    return fetchLazyProperties(properties);
+  }
 
   public QAssocUrlCheck(String name, R root) {
     super(name, root);
