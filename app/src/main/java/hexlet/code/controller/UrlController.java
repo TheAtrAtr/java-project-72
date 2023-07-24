@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.List;
 
 public class UrlController {
-    public static Handler urls = ctx -> {
+    public static Handler createUrl = ctx -> {
         String urlFromInputField = parse(ctx.formParam("url"));
         if (urlFromInputField == null) {
             ctx.sessionAttribute("flash", "Ссылка введена в некорректном формате");

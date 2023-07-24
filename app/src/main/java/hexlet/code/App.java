@@ -52,49 +52,18 @@ public class App {
     }
 
     private static void addRoutes(Javalin app) {
-//        app.get("/", ctx -> ctx.result("Hello World"));
 
-        // Добавляем маршруты в приложение. мя метода соответствует глаголу HTTP
-        // Метод get добавляет обработчик, который будет выполняться для GET запроса по указанному пути
         app.get("/", HelloWorld.helloWorld);
         app.routes(() -> {
             path("urls", () -> {
                 get(UrlController.listUrls);
-                post(UrlController.urls);
+                post(UrlController.createUrl);
                 path("{id}", () -> {
                     get(UrlController.showUrl);
                     post("/checks", UrlController.checkUrl);
                 });
             });
         });
-//
-//        app.get("companies", CompanyController.listCompanies);
-
-        // Добавляем обработчик для POST запроса по пути */companies*
-//        app.post("companies", CompanyController.createCompany);
-
-        // При помощи методов routes() и path() маршруты можно группировать по пути
-
-//        app.routes(() -> {
-//            path("companies", () -> {
-//                // GET /companies
-//                get(CompanyController.listCompanies);
-//                // POST /companies
-//                post(CompanyController.createCompany);
-//                // GET /companies/new
-//                get("new", CompanyController.newCompany);
-//            });
-//        });
-
-        // Создание динамического маршрута, в котором часть пути переменная
-
-        // GET /companies/1
-        // GET /companies/12
-        // GET /companies/101
-
-//        app.get("companies/{id}", CompanyController.showCompany);
-
-        // В обработчике можно будет получить переменную часть пути при помощи метода ctx.pathParam("id")
     }
 
     private static TemplateEngine getTemplateEngine() {
