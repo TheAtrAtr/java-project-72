@@ -20,7 +20,7 @@ import io.ebean.typequery.TypeQueryBean;
  */
 @Generated("io.ebean.querybean.generator")
 @TypeQueryBean("v1")
-public class QUrl extends TQRootBean<Url,QUrl> {
+public final class QUrl extends TQRootBean<Url,QUrl> {
 
   private static final QUrl _alias = new QUrl(true);
 
