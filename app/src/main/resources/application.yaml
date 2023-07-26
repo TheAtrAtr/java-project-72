@@ -14,5 +14,8 @@ ebean:
     migration:
       run: true
   production:
-    migration:
+    ddl:
       run: true
+      generate: true
+    # migration:
+    #  run: true
