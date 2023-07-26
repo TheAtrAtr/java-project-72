@@ -7,7 +7,7 @@ datasource:
   production:
     username: ${username}
     password: ${password}
-    url: ${url}
+    url: ${JDBC_DATABASE_URL}
 
 ebean:
   development:
